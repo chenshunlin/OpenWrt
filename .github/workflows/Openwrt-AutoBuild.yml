@@ -242,7 +242,7 @@ jobs:
 
     - name: Create release
       id: create_release
-	  if: env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true'
+      if: env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true'
       continue-on-error: true
       run: |
         echo -e "墙内加速下载 🚀:\n" >> release.txt
@@ -254,7 +254,7 @@ jobs:
     - name: Upload firmware for release
       uses: softprops/action-gh-release@v1
       continue-on-error: true
-	  if: env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true'
+      if: env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
